@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace ET
 {
@@ -17,6 +18,7 @@ namespace ET
 
 				
 				Game.EventSystem.Publish(new EventType.AppStart());
+				Debug.Log("项目开启");
 			}
 			catch (Exception e)
 			{
