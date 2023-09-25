@@ -44,5 +44,48 @@ namespace ET
 	        Game.EventSystem.Publish(new EventType.AfterUnitCreate() {Unit = unit});
             return unit;
         }
+        
+        public static Unit CreatePlayer(Scene currentScene, UnitInfo unitInfo)
+        {
+	        UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
+	        Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
+	        unitComponent.Add(unit);
+	        unit.UnitType = UnitType.Player;
+	        unit.Position = new Vector3(unitInfo.X, unitInfo.Y, unitInfo.Z);
+	        unit.Forward = new Vector3(unitInfo.ForwardX, unitInfo.ForwardY, unitInfo.ForwardZ);
+	        unit.AddComponent<MoveComponent>();
+	        Game.EventSystem.Publish(new EventType.AfterUnitCreate() {Unit = unit});
+	        return unit;
+        }
+        
+        public static Unit CreatePNpc(Scene currentScene, UnitInfo unitInfo)
+        {
+	        UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
+	        Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
+	        unitComponent.Add(unit);
+	        unit.UnitType = UnitType.NPC;
+	        unit.Position = new Vector3(unitInfo.X, unitInfo.Y, unitInfo.Z);
+	        unit.Forward = new Vector3(unitInfo.ForwardX, unitInfo.ForwardY, unitInfo.ForwardZ);
+        
+	        Game.EventSystem.Publish(new EventType.AfterUnitCreate() {Unit = unit});
+	        return unit;
+        }
+        
+        public static Unit CreateMonster(Scene currentScene, UnitInfo unitInfo)
+        {
+	        UnitComponent unitComponent = currentScene.GetComponent<UnitComponent>();
+	        Unit unit = unitComponent.AddChildWithId<Unit, int>(unitInfo.UnitId, unitInfo.ConfigId);
+	        unitComponent.Add(unit);
+	        unit.UnitType = UnitType.Monster;
+	        unit.Position = new Vector3(unitInfo.X, unitInfo.Y, unitInfo.Z);
+	        unit.Forward = new Vector3(unitInfo.ForwardX, unitInfo.ForwardY, unitInfo.ForwardZ);
+	        unit.AddComponent<MoveComponent>();
+	        unit.AddComponent<XunLuoPathComponent>();
+        
+	        Game.EventSystem.Publish(new EventType.AfterUnitCreate() {Unit = unit});
+	        return unit;
+        }
     }
+    
+
 }

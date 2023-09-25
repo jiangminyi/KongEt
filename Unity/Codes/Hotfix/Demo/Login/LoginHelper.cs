@@ -13,11 +13,12 @@ namespace ET
                 R2C_Login r2CLogin;
                 Session session = null;
                 try
-                {
+                {    
+                    //这个session只是用来处理登录的消息
                     session = zoneScene.GetComponent<NetKcpComponent>().Create(NetworkHelper.ToIPEndPoint(address));
                     {
                         r2CLogin = (R2C_Login) await session.Call(new C2R_Login() { Account = account, Password = password });
-                    }
+                    } 
                 }
                 finally
                 {

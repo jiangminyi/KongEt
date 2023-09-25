@@ -1,3 +1,6 @@
 {"list":[
 {"_t":"UnitConfig","_id":1001,"Type":1,"Name":"米克尔","Desc":"带有强力攻击技能","Position":1,"Height":178,"Weight":68},
+{"_t":"UnitConfig","_id":1002,"Type":1,"Name":"阿道夫","Desc":"带有强力攻击技能","Position":2,"Height":163,"Weight":50},
+{"_t":"UnitConfig","_id":1003,"Type":1,"Name":"分隔符","Desc":"带有强力攻击技能","Position":3,"Height":188,"Weight":86},
+{"_t":"UnitConfig","_id":1004,"Type":1,"Name":"森岛帆高","Desc":"带有强力攻击技能","Position":4,"Height":152,"Weight":48},
 ]}

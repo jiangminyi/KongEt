@@ -6,6 +6,12 @@ namespace ET
     {
         protected override void Run(EventType.AfterUnitCreate args)
         {
+            switch (args.Unit.UnitType)
+            {
+                case UnitType.Player:
+                    break;
+            }
+            
             // Unit View层
             // 这里可以改成异步加载，demo就不搞了
             GameObject bundleGameObject = (GameObject)ResourcesComponent.Instance.GetAsset("Unit.unity3d", "Unit");

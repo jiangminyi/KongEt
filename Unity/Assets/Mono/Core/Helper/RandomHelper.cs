@@ -118,9 +118,7 @@ namespace ET
             for (int i = 0; i < arr.Count; i++)
             {
                 int index = random.Next(0, arr.Count);
-                T temp = arr[index];
-                arr[index] = arr[i];
-                arr[i] = temp;
+                (arr[index], arr[i]) = (arr[i], arr[index]);
             }
         }
 
